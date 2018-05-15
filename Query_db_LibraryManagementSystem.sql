@@ -69,6 +69,7 @@ BEGIN
 	FROM tbl_Borrower t1
 		INNER JOIN tbl_BookLoans t2 ON t2.CardNumber = t1.CardNumber
 	GROUP BY t1.BorrowerName, t1.BorrowerAddress
+	HAVING COUNT(t1.BorrowerName) > 5 -- ADDED AFTER INTIAL TURN IN
 	;
 
 	/*	Seventh, for each book authored or co-authored by Stephen King, 
